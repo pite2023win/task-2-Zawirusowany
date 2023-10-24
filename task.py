@@ -18,7 +18,9 @@ class Bank:
     def show_funds(self, client):
         print(f'Funds in {client.name} account: {client.money_amount}')
     def transfer_money(self, client1, client2, amount):
-        pass
+        if client1 and client2 in self.clients:
+            client1.money_amount -= amount
+            client2.money_amount += amount
 
 client1 = Client('Will Smith', 1000)
 bank_1 = Bank('PKO')
